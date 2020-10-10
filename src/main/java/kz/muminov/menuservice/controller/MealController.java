@@ -12,12 +12,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins="*")
 public class MealController {
 
     private static final String MEAL = "/meal";
     private static final String GET_MEALS = MEAL + "/list";
     private static final String GET_MEAL = MEAL + "/{id}";
     private static final String DELETE_MEAL = MEAL + "/{id}";
+    private static final String GET_MEALS_WITHOUT_MENU = MEAL + "/nomenu";
 
     private final MealService mealService;
     private final MealRepository mealRepository;
@@ -35,6 +37,11 @@ public class MealController {
     @GetMapping(GET_MEALS)
     public ResponseEntity<List<Meal>> getMeals(){
         return new ResponseEntity<>(mealRepository.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping(GET_MEALS_WITHOUT_MENU)
+    public ResponseEntity<List<Meal>> getMealsWithoutMenu(){
+        return new ResponseEntity<>(mealRepository.getMealsWithoutMenu(), HttpStatus.OK);
     }
 
     @DeleteMapping(DELETE_MEAL)
