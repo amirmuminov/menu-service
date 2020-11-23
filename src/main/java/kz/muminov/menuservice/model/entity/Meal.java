@@ -28,4 +28,7 @@ public class Meal {
     @NotEmpty
     private String description;
 
+    @Column(name = "quantity")
+    private int quantity;
+
 }
