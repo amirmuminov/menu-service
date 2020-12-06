@@ -20,7 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().anyRequest().hasRole("REST_CLIENT")
-                .and().httpBasic();
+                .authorizeRequests().anyRequest().permitAll();
     }
 }

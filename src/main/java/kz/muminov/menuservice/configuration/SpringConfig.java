@@ -1,6 +1,5 @@
 package kz.muminov.menuservice.configuration;
 
-import kz.muminov.menuservice.model.entity.Meal;
 import kz.muminov.menuservice.model.entity.Order;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -12,7 +11,6 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Configuration
